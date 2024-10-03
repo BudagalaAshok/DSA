@@ -37,8 +37,24 @@ public class FindPairsWithSum {
 
     }
 
+    public static int[] findPairsAndReturn(int[] nums, int target){
+        Map<Integer,Integer> numsMap=new HashMap<>();
+        for(int i=0;i<nums.length;i++){
+
+            int compliment=target-nums[i];
+
+            if(numsMap.containsKey(compliment)){
+                return new int[]{numsMap.get(compliment),i};
+            }
+            numsMap.put(nums[i],i);
+
+        }
+        return null;
+    }
+
     public static void main(String[] args) {
-        System.out.println(findPairsWithTargetSum(new int[]{2,7,8,10},11));
+       // System.out.println(findPairsWithTargetSum(new int[]{2,7,8,10},11));
+        System.out.println(findPairsAndReturn(new int[]{2,7,11,15},9));
     }
 
 }

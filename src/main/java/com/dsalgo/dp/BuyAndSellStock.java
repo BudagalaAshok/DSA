@@ -16,7 +16,6 @@ public class BuyAndSellStock {
 
         int min = stocks[0];
         int maxProfit = 0;
-        int buy = 0;
         int n = stocks.length;
         int minTrack = min;
 
@@ -25,8 +24,6 @@ public class BuyAndSellStock {
             maxProfit = Math.max(maxProfit, cost);
             min = Math.min(min, stocks[i]);
             if (min != minTrack) {
-                System.out.println("we make a profit when we buy at day :" + buy + " and sell at day :" + (i - 1));
-                buy = i;
                 minTrack = min;
             }
         }
@@ -132,7 +129,6 @@ public class BuyAndSellStock {
 
                 }
                 if (buy == 1) { //we can sell the stock
-                    Math.max(stocks[i] + dp[i + 1][0], dp[i + 1][1]);
                     dp[i][buy] = Math.max(stocks[i] + dp[i + 1][0], dp[i + 1][1]);
                 }
 

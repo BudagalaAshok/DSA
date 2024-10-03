@@ -1,6 +1,7 @@
-package com.dsalgo.strings;
+package com.dsalgo.slidingWindow;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 public class LongestSubstringWithOutRepeatingChars {
@@ -64,8 +65,52 @@ public class LongestSubstringWithOutRepeatingChars {
 
     }
 
+    //Using two pointers
+    public static int findLongestSubstringLengthWithOutRepeatingChars(String str){
+
+        int start=0;
+        int maxLength=0;
+        HashSet<Character> hashSet=new HashSet<>();
+        for (int end = 0; end < str.length(); end++) {
+
+            while (hashSet.contains(str.charAt(end))){
+                hashSet.remove(str.charAt(start));
+                start++;
+            }
+
+            hashSet.add(str.charAt(end));
+            maxLength=Math.max(maxLength,end-start+1);
+        }
+        System.out.println("Maximum SubString Length :"+maxLength);
+        return maxLength;
+
+    }
+
+    //Using two pointers
+    public int lengthOfLongestSubstring(String s) {
+        int left = 0, right = 0, maxLength = 0;
+        HashSet<Character> set = new HashSet<>();
+
+        while (right < s.length()) {
+            // If the character at right pointer is not in the set, add it and update max length
+            if (!set.contains(s.charAt(right))) {
+                set.add(s.charAt(right));
+                maxLength = Math.max(maxLength, right - left + 1);
+                right++; // Move the right pointer to expand the window
+            } else {
+                // If a duplicate is found, remove the leftmost character and move left pointer
+                set.remove(s.charAt(left));
+                left++; // Shrink the window from the left
+            }
+        }
+
+        return maxLength;
+    }
+
     public static void main(String[] args) {
-        System.out.println("max length using O(n) "+printSubStringWithOutCharacters("abcabcbb"));
+        //System.out.println("max length using O(n) "+printSubStringWithOutCharacters("abcabcbb"));
+        findLongestSubstringLengthWithOutRepeatingChars("abcabcbb");
+
 
     }
 }

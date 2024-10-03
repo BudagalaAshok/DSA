@@ -1,8 +1,12 @@
-package com.dsalgo.mixBagConcepts;
+package com.dsalgo.backTracking;
 
 import java.io.*;
 import java.util.*;
 
+/**
+ * 	•	Time Complexity: O( \frac{4^n}{\sqrt{n}} ).
+ * 	•	Space Complexity: O(n).
+ */
 public class BalancedParentheses {
     public static void balancedParentheses(char[] charArray, int n, int leftCount, int rightCount, int index) {
 

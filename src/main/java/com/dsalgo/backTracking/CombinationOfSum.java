@@ -1,4 +1,4 @@
-package com.dsalgo.arrays;
+package com.dsalgo.backTracking;
 
 import java.util.ArrayList;
 import java.util.List;

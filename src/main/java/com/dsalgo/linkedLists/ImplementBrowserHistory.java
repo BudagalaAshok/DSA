@@ -1,7 +1,5 @@
 package com.dsalgo.linkedLists;
 
-import java.util.HashMap;
-
 public class ImplementBrowserHistory {
 
     Node current;
@@ -11,8 +9,8 @@ public class ImplementBrowserHistory {
     }
 
     public Node visit(String url){
-        Node newNode= new Node(url);
-        current.next=newNode;
+        Node newNode = new Node(url);
+        current.next= newNode;
         newNode.prev=current;
         current=current.next;
         return current;

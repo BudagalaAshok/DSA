@@ -1,15 +1,5 @@
 package com.dsalgo.linkedLists;
 
-class ListNode {
-    int val;
-    ListNode next;
-
-    public ListNode(int val) {
-        this.val = val;
-        this.next = null;
-    }
-}
-
 public class SumOfTwoLinkedLists {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0); // Dummy node to serve as the head of the result list
@@ -47,7 +37,7 @@ public class SumOfTwoLinkedLists {
     private void printList(ListNode head) {
         ListNode current = head;
         while (current != null) {
-            System.out.print(current.val + " ");
+            System.out.print(current.next + " ");
             current = current.next;
         }
         System.out.println();

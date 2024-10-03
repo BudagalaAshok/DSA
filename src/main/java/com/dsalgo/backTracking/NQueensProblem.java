@@ -4,6 +4,10 @@ import org.checkerframework.checker.units.qual.N;
 
 import static jdk.nashorn.internal.objects.Global.print;
 
+/**
+ * Time Complexity:
+ * O(N!) in the worst case: There are N possible positions in the first row, N-1 in the second row, and so on, leading to N factorial possible configurations to explore.
+ **/
 public class NQueensProblem {
 
 
@@ -41,8 +45,10 @@ public class NQueensProblem {
         }
 
         //Now check to place the queen is it safe or not by iterating all rows
+        //Here we are going only via rows because in each row we place only one queen if we place one queen then immediately we can move to the next row
         for (int row = 0; row < board.length; row++) {
 
+            //Here we have options on columns under each row so we have multiple combinations to place. If one combinations does not work then we backtrack and continue
             if (isSafe(board, row, col)) {
 
                 //Mark the row and col in the board and move to the next column
@@ -71,12 +77,13 @@ public class NQueensProblem {
     /*
        To place the queen we need to check left side,left upper diagonal and left below diagonal
        why these three directions because we are placing the queen at the column for the first time as per the
-       code no queen placed in right,diagonal,etc in all directions
+       code no queen placed in right,diagonal,etc in all directions. Here we are traversing row by row so every time we don't check below row because we didn't place the queeen
+       Need to check above column level and also from that point to left diagonal and right diagonal
      */
 
     private boolean isSafe(int[][] board, int row, int col) {
 
-        //First check the left diagonal part
+        //First check the left diagonal part where we place the queen
         int dupRow = row;
         int dupCol = col;
         while (row >= 0 && col >= 0) {

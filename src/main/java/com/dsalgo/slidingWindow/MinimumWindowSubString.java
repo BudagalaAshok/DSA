@@ -1,4 +1,4 @@
-package com.dsalgo.strings;
+package com.dsalgo.slidingWindow;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -103,7 +103,7 @@ public class MinimumWindowSubString {
 
 
     //Using slidingwindow technique and Hashing
-    public String findMinWindowSubString(String s, String t) {
+    public static String findMinWindowSubString(String s, String t) {
 
 
         int left = 0;
@@ -165,7 +165,7 @@ public class MinimumWindowSubString {
 
 
     public static void main(String[] args) {
-        System.out.println(minWindow("ADOBECODEBANC", "ABC"));
+        System.out.println(findMinWindowSubString("ADOBECODEBANC", "ABC"));
     }
 
 }

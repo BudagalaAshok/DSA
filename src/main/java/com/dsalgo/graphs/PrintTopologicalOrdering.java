@@ -83,8 +83,8 @@ public class PrintTopologicalOrdering {
         int count = 0;
 
         while (!queue.isEmpty()) {
-
             int node = queue.poll();
+            count++;
             topoList.add(node);
             for (int neighbor : adjacencyList.get(node)) {
 
@@ -95,7 +95,7 @@ public class PrintTopologicalOrdering {
                 }
 
             }
-            count++;
+
 
         }
 

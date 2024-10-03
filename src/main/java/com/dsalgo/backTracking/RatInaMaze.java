@@ -37,7 +37,7 @@ public class RatInaMaze {
     private boolean solveMazeUtil(int[][] maze, int x, int y, int[][] sol) {
         int n = maze.length;
         //Base Case, this means we reach the destination from (0,0)
-        if (x == n - 1 && y == n - 1) {
+        if (x == n - 1 && y == n - 1 && maze[x][y]==1) {
             //then add this to our solution
             sol[x][y] = 1;
             return true;

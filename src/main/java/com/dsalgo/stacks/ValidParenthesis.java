@@ -1,5 +1,6 @@
 package com.dsalgo.stacks;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Stack;
 
@@ -7,32 +8,32 @@ public class ValidParenthesis {
 
     //This one we can achieve using stack and hash map also
 
-    public static boolean isValidParenthesis(String str){
+    public static boolean isValidParenthesis(String str) {
 
-        if(str.length()%2!=0){
+        if (str.length() % 2 != 0) {
             return false;
         }
 
-        Stack<Character> stack=new Stack<>();
+        Stack<Character> stack = new Stack<>();
         for (int i = 0; i < str.length(); i++) {
 
-            if(stack.isEmpty() && (str.charAt(i)==')' || str.charAt(i)==']' || str.charAt(i)=='}')){
+            if (stack.isEmpty() && (str.charAt(i) == ')' || str.charAt(i) == ']' || str.charAt(i) == '}')) {
                 return false;
             }
-            switch (str.charAt(i)){
+            switch (str.charAt(i)) {
 
                 case ')':
-                    if(stack.peek()=='('){
+                    if (stack.peek() == '(') {
                         stack.pop();
                     }
                     break;
                 case ']':
-                    if(stack.peek()=='['){
+                    if (stack.peek() == '[') {
                         stack.pop();
                     }
                     break;
                 case '}':
-                    if (stack.peek()=='{'){
+                    if (stack.peek() == '{') {
                         stack.pop();
                     }
                     break;
@@ -43,26 +44,26 @@ public class ValidParenthesis {
 
         }
 
-      return  stack.isEmpty();
+        return stack.isEmpty();
     }
 
-    public static boolean isValidParenthesisUsingHashMap(String expression){
+    public static boolean isValidParenthesisUsingHashMap(String expression) {
 
-        Stack<Character> stack=new Stack<>();
-        HashMap<Character,Character> hashMap=new HashMap<>();
-        hashMap.put(')','(');
-        hashMap.put('}','{');
-        hashMap.put(']','[');
+        Stack<Character> stack = new Stack<>();
+        HashMap<Character, Character> hashMap = new HashMap<>();
+        hashMap.put(')', '(');
+        hashMap.put('}', '{');
+        hashMap.put(']', '[');
 
         for (int i = 0; i < expression.length(); i++) {
-            if(hashMap.containsKey(expression.charAt(i))){
-                if(!stack.isEmpty() && hashMap.get(expression.charAt(i)).equals(stack.peek())){
+            if (hashMap.containsKey(expression.charAt(i))) {
+                if (!stack.isEmpty() && hashMap.get(expression.charAt(i)).equals(stack.peek())) {
                     stack.pop();
-                }else{
+                } else {
                     return false;
                 }
 
-            }else{
+            } else {
                 stack.push(expression.charAt(i));
             }
 
@@ -70,9 +71,27 @@ public class ValidParenthesis {
         return stack.isEmpty();
     }
 
+    public static void test() {
+        String s = "/home/ashok//./master";
+        String[] arr = s.split("/");
+        Stack<String> stack = new Stack<>();
+        for (String item : arr) {
+            if (!item.isEmpty() && !item.equals(".")) {
+                stack.push(item);
+            }else if(item.equals("..")){
+                stack.pop();
+            }
+
+        }
+        while (!stack.isEmpty()){
+            System.out.println(stack.pop());
+        }
+    }
+
     public static void main(String[] args) {
-        System.out.println("Only Stack:"+isValidParenthesis("({[]})"));
-        System.out.println("Stack and HashMap:"+isValidParenthesisUsingHashMap("({[]})"));
+        System.out.println("Only Stack:" + isValidParenthesis("({[]})"));
+        System.out.println("Stack and HashMap:" + isValidParenthesisUsingHashMap("({[]})"));
+        test();
 
     }
 

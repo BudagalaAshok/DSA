@@ -11,9 +11,9 @@ public class EvalReversePolishNotation {
     private static final Map<String, BiFunction<Integer, Integer, Integer>> OPERATIONS = new HashMap<>();
 
     static {
-        OPERATIONS.put("+", (a, b) -> a + b);
-        OPERATIONS.put("-", (a, b) -> a - b);
-        OPERATIONS.put("/", (a, b) -> a / b);
+        OPERATIONS.put("+", Integer::sum);
+        OPERATIONS.put("-", (a, b) -> b - a);
+        OPERATIONS.put("/", (a, b) -> b / a);
         OPERATIONS.put("*", (a, b) -> a * b);
     }
 
