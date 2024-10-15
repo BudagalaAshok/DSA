@@ -1,5 +1,8 @@
 package com.dsalgo.trees;
 
+/**
+ * Symmetric Tree: Focuses on mirroring (left vs. right).
+ */
 public class IsSymmetricalTree {
 
     public boolean isSymmetrical(TreeNode root) {

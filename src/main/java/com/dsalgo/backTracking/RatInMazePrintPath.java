@@ -9,10 +9,10 @@ public class RatInMazePrintPath {
         List<String> result = new ArrayList<>();
         //Start from first row and first col
         maze(board, 0, 0, "", result);
-        if(result.isEmpty()){
+        if (result.isEmpty()) {
             System.out.println("No Path found");
-        }else{
-            for (String path:result){
+        } else {
+            for (String path : result) {
                 System.out.println(path);
             }
         }
@@ -27,28 +27,28 @@ public class RatInMazePrintPath {
         }
 
         if (isSafe(board, row, col)) {
-            board[row][col]=1;
+            board[row][col] = 1;
             //Check for down
-            if(row+1<n){
-                maze(board,row+1,col,"D",result);
+            if (row + 1 < n) {
+                maze(board, row + 1, col, path + "D", result);
             }
 
             //Check for up
-            if(row-1>=0){
-                maze(board,row-1,col,"U",result);
+            if (row - 1 >= 0) {
+                maze(board, row - 1, col, path + "U", result);
             }
 
             //Check for left
-            if(col-1>=0){
-                maze(board,row,col-1,"L",result);
+            if (col - 1 >= 0) {
+                maze(board, row, col - 1, path + "L", result);
             }
 
             //Check for right
-            if(col+1<n){
-                maze(board,row,col+1,"R",result);
+            if (col + 1 < n) {
+                maze(board, row, col + 1, path + "R", result);
             }
 
-            board[row][col]=0;
+            board[row][col] = 0;
 
         }
 

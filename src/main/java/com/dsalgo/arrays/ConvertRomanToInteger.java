@@ -23,7 +23,8 @@ public class ConvertRomanToInteger {
         int prevValue=0;
         int total=0;
 
-        //Iterate string from right to left and then compare the current value with the previous value if the current value is less than previous value then reduce the current value from total otherwise add it to total
+        //Iterate string from right to left and then compare the current value with the previous value if the current value is less than previous value
+        // then reduce the current value from total otherwise add it to total
         for (int i=romanString.length()-1;i>=0;i--){
           int currentVal=hashMap.get(romanString.charAt(i));
           if(currentVal< prevValue){

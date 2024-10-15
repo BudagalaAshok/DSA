@@ -33,7 +33,7 @@ public class RotateImage {
         //Transpose Matrix
         int n = matrix.length;
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+            for (int j = i; j < n; j++) {
                 int temp = matrix[i][j];
                 matrix[i][j] = matrix[j][i];
                 matrix[j][i] = temp;
@@ -41,9 +41,12 @@ public class RotateImage {
 
         }
 
+        for (int[] row:matrix){
+            System.out.println(Arrays.toString(row));
+        }
+
         //Reverse each row under the transpose matrix
         for (int[] row : matrix) {
-
             reverse(row);
         }
 
@@ -59,7 +62,19 @@ public class RotateImage {
             int temp = arr[p1];
             arr[p1] = arr[p2];
             arr[p2] = temp;
+            p1++;
+            p2--;
 
+        }
+
+    }
+
+    public static void main(String[] args) {
+        RotateImage rotateImage=new RotateImage();
+        int[][] matrix=new int[][]{{1,2,3},{4,5,6},{7,8,9}};
+        rotateImage.rotateMatrixWithOutAdditionalSpace(matrix);
+        for (int[] row:matrix){
+            System.out.println(Arrays.toString(row));
         }
 
     }

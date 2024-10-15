@@ -24,4 +24,24 @@ public class ContainerWithMostWater {
         return maxArea;
     }
 
+    //Bruteforce solution TC:O(n^2)
+    public int maxArea(int[] height) {
+        int maxArea = 0;
+
+        // Brute-force approach: check every possible pair of lines
+        for (int i = 0; i < height.length; i++) {
+            for (int j = i + 1; j < height.length; j++) {
+                // Find the height as the minimum of the two lines
+                int h = Math.min(height[i], height[j]);
+                // Width is the distance between the two lines
+                int w = j - i;
+                // Calculate the area and update maxArea
+                int area = h * w;
+                maxArea = Math.max(maxArea, area);
+            }
+        }
+
+        return maxArea;
+    }
+
 }

@@ -9,6 +9,17 @@ import java.util.Arrays;
 public class CoinChange {
 
 
+    /**
+     * In this problem we have to consider below cases one is we are having one coin and the target we have left are we able to form the remaining target with the single left coin or not.
+     * If it is formed then return 1 otherwise return 0. Remaining two cases are pick and non_pick let say if we pick then we are subtracting the coin amount from target and moving to the next coin
+     * Other wise we don't pick and move to the next coin. While picking the coin the coin value should be less than or equal to the target
+     * @param index
+     * @param target
+     * @param denominations
+     * @return
+     */
+
+
     public static long findCoinsPickUsingRecursion(int index, int target, int[] denominations) {
 
         //Base Condition
@@ -90,10 +101,66 @@ public class CoinChange {
         return dp[n - 1][target];
     }
 
+    //No of ways we can get the target
+    public int coinChange(int[] coins, int amount) {
+        int index = coins.length - 1;
+        int[][] dp = new int[coins.length][amount + 1];
+
+        // Initialize dp array with -1 to signify that subproblem hasn't been solved yet
+        for (int[] eachArray : dp) {
+            Arrays.fill(eachArray, -1);
+        }
+
+        int result = minCoins(coins, amount, index, dp);
+
+        // If result is still Integer.MAX_VALUE, it means the amount cannot be made with the given coins
+        return result == Integer.MAX_VALUE ? -1 : result;
+    }
+
+    public int minCoins(int[] coins, int amount, int index, int[][] dp) {
+
+        // Base case: If amount is 0, no coins are needed
+        if (amount == 0) {
+            return 0;
+        }
+
+        // Base case: If only one coin type is left
+        if (index == 0) {
+            // If amount can be made with the only remaining coin, return the number of coins required
+            if (amount % coins[index] == 0) {
+                return amount / coins[index];
+            } else {
+                return Integer.MAX_VALUE;  // Invalid: amount cannot be made with this coin
+            }
+        }
+
+        // If subproblem has already been solved, return its value
+        if (dp[index][amount] != -1) {
+            return dp[index][amount];
+        }
+
+        // Case 1: Do not pick the current coin
+        int non_pick = minCoins(coins, amount, index - 1, dp);
+
+        // Case 2: Pick the current coin, if its value is less than or equal to the remaining amount
+        int pick = Integer.MAX_VALUE;
+        if (coins[index] <= amount) {
+            int subResult = minCoins(coins, amount - coins[index], index, dp);
+            if (subResult != Integer.MAX_VALUE) {
+                pick = subResult + 1;  // Add 1 because we're picking one coin
+            }
+        }
+
+        // Store the minimum result of both cases
+        dp[index][amount] = Math.min(pick, non_pick);
+
+        return dp[index][amount];
+    }
+
 
     public static void main(String[] args) {
-        int[] denominations = { 1, 2, 3 };
-        int target = 4;
+        int[] denominations = { 1, 2, 5 };
+        int target = 11;
         int n = denominations.length;
 
         long[][] dp=new long[n][target+1];

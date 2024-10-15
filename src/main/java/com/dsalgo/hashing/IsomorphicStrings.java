@@ -30,28 +30,23 @@ public class IsomorphicStrings {
     //Using HashMaps
     public boolean isIsomorphicStrings(String s, String t) {
 
-        Map<Character,Character> charMap=new HashMap<>();
-        Map<Character,Character> tMap=new HashMap<>();
+        Map<Character, Character> charMap = new HashMap<>();
+        Map<Character, Character> tMap = new HashMap<>();
 
-        for(int i=0;i<s.length();i++){
-
-            if(charMap.containsKey(s.charAt(i))){
-
-                if(charMap.get(s.charAt(i))!=t.charAt(i)){
+        for (int i = 0; i < s.length(); i++) {
+            if (charMap.containsKey(s.charAt(i))) {
+                if (charMap.get(s.charAt(i)) != t.charAt(i)) {
                     return false;
                 }
-            }else{
-
-                charMap.put(s.charAt(i),t.charAt(i));
+            } else {
+                charMap.put(s.charAt(i), t.charAt(i));
             }
-            if(tMap.containsKey(t.charAt(i))){
-
-                if(tMap.get(t.charAt(i))!=s.charAt(i)){
+            if (tMap.containsKey(t.charAt(i))) {
+                if (tMap.get(t.charAt(i)) != s.charAt(i)) {
                     return false;
                 }
-            }else{
-
-                tMap.put(t.charAt(i),s.charAt(i));
+            } else {
+                tMap.put(t.charAt(i), s.charAt(i));
             }
 
         }

@@ -83,7 +83,7 @@ public class NQueensProblem {
 
     private boolean isSafe(int[][] board, int row, int col) {
 
-        //First check the left diagonal part where we place the queen
+        //First check the left up diagonal part where we place the queen
         int dupRow = row;
         int dupCol = col;
         while (row >= 0 && col >= 0) {
@@ -156,7 +156,8 @@ public class NQueensProblem {
         NQueensProblem nQueensProblem = new NQueensProblem();
         //nQueensProblem.solveNQueens(4);
         //This is to optimize the isSafe method using hashing
-        nQueensProblem.solveNQueensOptimized(4);
+        nQueensProblem.solveNQueens(4);
+        //nQueensProblem.solveNQueensOptimized(4);
     }
 
 

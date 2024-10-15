@@ -11,7 +11,7 @@ public class HappyNumber {
     //To find happy number we can store the number in the hashset
     //We can iterate a loop until n!=1 and the number does not contain hashset
 
-    public boolean isHappy(int number){
+    public static boolean isHappy(int number){
 
         HashSet<Integer> hashSet=new HashSet<>();
 
@@ -23,7 +23,7 @@ public class HappyNumber {
 
     }
 
-    private int getSumOfSquares(int number) {
+    private static int getSumOfSquares(int number) {
 
         int sum=0;
         while(number>0){
@@ -33,6 +33,10 @@ public class HappyNumber {
         }
         return sum;
 
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isHappy(2));
     }
 
 }

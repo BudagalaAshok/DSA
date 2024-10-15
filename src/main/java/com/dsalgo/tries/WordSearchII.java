@@ -22,7 +22,7 @@ public class WordSearchII {
         //First build a trie with all the words
         TrieNode root = buildTrie(words);
         //Now do the dfs for each word in the board
-        //need to check for the word in all 4 directs left,right, up and dow
+        //need to check for the word in all 4 directions left,right, up and dow
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
                 dfs(board, i, j, root, result);
@@ -108,7 +108,7 @@ public class WordSearchII {
     private boolean dfs(char[][] board, int i, int j, String word, int index) {
         // Base cases
         if (index == word.length()) return true; // Word is found
-        if (i < 0 || i >= board.length || j < 0 || j >= board[0].length || board[i][j] != word.charAt(index)) {
+        if (i < 0 || i >= board.length || j < 0 || j >= board[0].length || board[i][j]=='#' || board[i][j] != word.charAt(index)) {
             return false; // Out of bounds or character mismatch
         }
 

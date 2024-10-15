@@ -2,7 +2,7 @@ package com.dsalgo.dp;
 
 import java.util.Arrays;
 
-public class LongestCommonSubSequence {
+public class  LongestCommonSubSequence {
 
 
     //Recursive logic to find LCS

@@ -4,8 +4,8 @@ import java.io.*;
 import java.util.*;
 
 /**
- * 	•	Time Complexity: O( \frac{4^n}{\sqrt{n}} ).
- * 	•	Space Complexity: O(n).
+ The time complexity is O(2^n), but it generates only valid combinations,
+ so it’s more efficient than trying all possible sequences of n opening and n closing parentheses.
  */
 public class BalancedParentheses {
     public static void balancedParentheses(char[] charArray, int n, int leftCount, int rightCount, int index) {
@@ -38,7 +38,7 @@ public class BalancedParentheses {
         }
 
         // Add an opening parenthesis if the count of opening parentheses is less than n/2
-        if (openCount < n ) {
+        if (openCount < n/2 ) {
             generateBalancedParentheses(n, openCount + 1, closeCount, current + "(", result);
         }
 

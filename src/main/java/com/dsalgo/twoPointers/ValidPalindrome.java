@@ -2,6 +2,10 @@ package com.dsalgo.twoPointers;
 
 public class ValidPalindrome {
 
+
+    //Brute force approach is using StringBuilder iterate string from backwards or front
+    //If we are iterating from front then check if the character is capital or small , incase if it is capital find the respective small character and append
+    //If it is digit skip or alphanumeric.
     public boolean isPalindrome(String s) {
 
         if (s.isEmpty()) {
@@ -29,9 +33,33 @@ public class ValidPalindrome {
 
     }
 
+    //Second one is using two pointers
+    public boolean isPalindromeUsingTwoPointers(String validString){
+
+        int start=0;
+        int end=validString.length()-1;
+        while(start<end){
+            //Check if it is not letter or digit, then increment left pointer
+            while (start<end && !Character.isLetterOrDigit(validString.charAt(start))){
+                start++;
+            }
+            //Check if it is not letter or digit, then decrement right pointer from end
+            while(start<end && !Character.isLetterOrDigit(validString.charAt(end))){
+                end--;
+            }
+
+            if(Character.toLowerCase(validString.charAt(start))!=Character.toLowerCase(validString.charAt(end))){
+                return false;
+            }
+            start++;
+            end--;
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         ValidPalindrome validPalindrome = new ValidPalindrome();
-        System.out.println(validPalindrome.isPalindrome("race a car"));
+        System.out.println(validPalindrome.isPalindromeUsingTwoPointers("A man, a plan, a canal: Panama"));
     }
 
 }

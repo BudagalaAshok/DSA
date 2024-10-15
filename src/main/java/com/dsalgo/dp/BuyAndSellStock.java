@@ -60,20 +60,38 @@ public class BuyAndSellStock {
         if (operation == 1) {
             //Here again we have two cases one is customer want to buy and he don't want to buy on that day
             //We are maintaining the previous operation because if he bought then we can't buy again and if he sold previous he can't sold again
-            //first use case he bought that's why amount got reduced and moving to the next day with operation as sell and incase he don't want to buy because the price is higher then move to next day
+            //first use case he bought that's why amount got reduced and moving to the next day with operation as sell and
+            // incase he don't want to buy because the price is higher then move to next day
             // with operation as buy again
             profit = Math.max(-stocks[index] + buyAndSellStocks(stocks, index + 1, 0, n), buyAndSellStocks(stocks, index + 1, 1, n));
 
         } else {
             //Here again we have two cases one is customer want to sell and he don't want to sell on that day
             //We are maintaining the previous operation because if he bought then we can't buy again and if he sold previous he can't sold again
-            //first use case he sold that's why amount got amount and moving to the next day with operation as buy again and incase he don't want to sell because the price is lower then move to next day
+            //first use case he sold that's why amount got amount and moving to the next day with operation as buy again and
+            // incase he don't want to sell because the price is lower then move to next day
             // with operation as buy again
             profit = Math.max(stocks[index] + buyAndSellStocks(stocks, index + 1, 1, n), buyAndSellStocks(stocks, index + 1, 0, n));
         }
         return profit;
 
 
+    }
+
+    //leet code Problem 122
+    //Best time to buy and sell stock but we can hold the stock at once and maximize the profit
+    //The Best Time to Buy and Sell Stock II problem can be solved with a simple greedy approach by identifying all the price increases and adding the profits.
+    // This solution is efficient and runs in linear time, making it well-suited for large inputs.
+    public int maxProfitII(int[] prices) {
+
+        int totalProfit=0;
+        for(int i=1;i<prices.length;i++){
+
+            if(prices[i]>prices[i-1]){
+                totalProfit+=prices[i]-prices[i-1];
+            }
+        }
+        return totalProfit;
     }
 
     public int buyAndSellStocksUsingMemoization(int[] stocks, int index, int operation, int n, int[][] dp) {

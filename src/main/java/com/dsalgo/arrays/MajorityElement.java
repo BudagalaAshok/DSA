@@ -1,5 +1,17 @@
 package com.dsalgo.arrays;
 
+/**
+ * Intuition:
+ *
+ * 	1.	Majority Element Property: The majority element appears more than half the time in the array. This means that if we could somehow “eliminate” or “cancel out” occurrences of other elements,
+ * 	the majority element would still be left standing.
+ * 	2.	Pairing Elements: The Boyer-Moore algorithm works by maintaining a count and a candidate for the majority element:
+ * 	•	If the current element is the same as the candidate, we increase the count.
+ * 	•	If the current element is different, we decrease the count.
+ * 	•	If the count reaches zero, we change the candidate to the current element.
+ * 	3.	Why Does It Work?: Since the majority element appears more than half the time, even after canceling out many occurrences of other elements,
+ * 	the majority element will survive through the process and end up as the candidate at the end.
+ */
 public class MajorityElement {
 
 

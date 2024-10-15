@@ -12,13 +12,14 @@ public class FindMedianOfSubArray {
         Comparator<Integer> maxHeapComparator = (o1, o2) -> o2 - o1;
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>(maxHeapComparator);
 
+        /*
         Collections.sort(Lists.newArrayList("Ashok"), new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
                 return o1.length()-o2.length();
             }
         });
-
+         */
         //Another way of writing the same thing using below
         //PriorityQueue<Integer> maxHeap=new PriorityQueue<>(Collections.reverseOrder());
 

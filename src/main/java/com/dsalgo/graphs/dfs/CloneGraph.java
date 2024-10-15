@@ -1,4 +1,4 @@
-package com.dsalgo.graphs;
+package com.dsalgo.graphs.dfs;
 
 import com.dsalgo.trees.Node;
 

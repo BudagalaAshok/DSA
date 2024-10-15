@@ -1,4 +1,4 @@
-package com.dsalgo.mixBagConcepts;
+package com.dsalgo.arrays;
 
 import java.util.Stack;
 

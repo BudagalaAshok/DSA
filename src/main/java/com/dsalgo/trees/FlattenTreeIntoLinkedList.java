@@ -1,5 +1,7 @@
 package com.dsalgo.trees;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 public class FlattenTreeIntoLinkedList {
@@ -34,37 +36,38 @@ public class FlattenTreeIntoLinkedList {
 
     }
 
-    public void flattenUsingIteration(TreeNode node) {
+    // List to store the nodes in pre-order traversal
+    List<TreeNode> nodeList = new ArrayList<>();
 
+    public void flattenTreeUsingBruteForce(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        // Step 1: Traverse the tree in pre-order and store the nodes in a list
+        preOrderTraversal(root);
+
+        // Step 2: Reconstruct the tree into a linked list
+        for (int i = 0; i < nodeList.size() - 1; i++) {
+            TreeNode current = nodeList.get(i);
+            TreeNode next = nodeList.get(i + 1);
+            current.left = null; // Set left to null
+            current.right = next; // Connect the right to the next node
+        }
+    }
+
+    // Pre-order traversal to store nodes in a list
+    private void preOrderTraversal(TreeNode node) {
         if (node == null) {
             return;
         }
 
-        Stack<TreeNode> stack = new Stack<>();
-        stack.push(node);
-
-        while (!stack.isEmpty()) {
-            TreeNode current = stack.pop();
-
-            if (current.left != null) {
-                stack.push(current.left);
-            }
-
-            if (current.right != null) {
-                stack.push(current.right);
-            }
-
-            if (!stack.isEmpty()) {
-                // Connect the right child to
-                // the next node in the stack.
-                current.right = stack.peek();
-            }
-            // Set the left child to null to
-            // form a right-oriented linked list.
-            current.left = null;
-        }
-
+        nodeList.add(node); // Store the current node
+        preOrderTraversal(node.left); // Traverse the left subtree
+        preOrderTraversal(node.right); // Traverse the right subtree
     }
+
+
 
     //Optimal approach using level order traversal
     //iterate left side of the tree until reach the right most node and then connect this right to root node right
@@ -72,12 +75,13 @@ public class FlattenTreeIntoLinkedList {
     public void flattenTreeLL(TreeNode node) {
         // Initialize a pointer
         // 'curr' to the root of the tree
+        //Don't change the root
         TreeNode curr = node;
 
         // Iterate until 'curr'
         // becomes NULL
         while (curr != null) {
-            // Check if the current
+            // Check if the current, we need to go to left and find the empty space on the right node
             // node has a left child
             if (curr.left != null) {
                 // If yes, find the rightmost

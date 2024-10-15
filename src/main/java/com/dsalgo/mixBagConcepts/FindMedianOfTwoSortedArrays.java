@@ -6,7 +6,7 @@ public class FindMedianOfTwoSortedArrays {
 
     //Time complexity was O(n+m)
     //But we need to solve O(log(m+n))
-    public static float findMedianOfTwoSortedArrays(int[] arr1, int[] arr2, int n, int m) {
+    public static double findMedianOfTwoSortedArrays(int[] arr1, int[] arr2, int n, int m) {
 
         //Now merge these two sorted arrays with two pointers and then final array is also sorted array
 
@@ -45,10 +45,10 @@ public class FindMedianOfTwoSortedArrays {
 
         //Now our final array is sorted with the two arrays
         //find the mid value and then if it is even do (n+1)/2 or (mid + mid-1)/2
-        if (mid % 2 == 0) {
+        if (mid % 2 != 0) {
             return finalArray[mid];
         } else {
-            return (float)(finalArray[mid] + finalArray[mid - 1]) / 2;
+            return (double)(finalArray[mid] + finalArray[mid - 1]) / 2;
         }
 
     }
@@ -56,7 +56,12 @@ public class FindMedianOfTwoSortedArrays {
     public static void main(String[] args) {
         int[] arr1 = {1, 3, 8, 17};
         int[] arr2 = {5, 6, 7, 19, 21, 25};
+
+        //{1,3,5,6,7,8,17,19,21,25}
+        int[] arr3={1,3};
+        int[] arr4={2};
         System.out.println("Median was :"+findMedianOfTwoSortedArrays(arr1, arr2, 4, 6));
+        System.out.println("Median was :"+findMedianOfTwoSortedArrays(arr3, arr4, 2, 1));
     }
 
 }

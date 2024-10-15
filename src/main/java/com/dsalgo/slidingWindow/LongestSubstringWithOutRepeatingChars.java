@@ -65,7 +65,8 @@ public class LongestSubstringWithOutRepeatingChars {
 
     }
 
-    //Using two pointers
+    //Using sliding window technique we maintain two pointers by expanding window until we found all the unique characters
+    //once we find the duplicate shrink the window
     public static int findLongestSubstringLengthWithOutRepeatingChars(String str){
 
         int start=0;
@@ -87,7 +88,7 @@ public class LongestSubstringWithOutRepeatingChars {
     }
 
     //Using two pointers
-    public int lengthOfLongestSubstring(String s) {
+    public static int lengthOfLongestSubstring(String s) {
         int left = 0, right = 0, maxLength = 0;
         HashSet<Character> set = new HashSet<>();
 
@@ -110,6 +111,7 @@ public class LongestSubstringWithOutRepeatingChars {
     public static void main(String[] args) {
         //System.out.println("max length using O(n) "+printSubStringWithOutCharacters("abcabcbb"));
         findLongestSubstringLengthWithOutRepeatingChars("abcabcbb");
+        System.out.println("Max Length was :"+lengthOfLongestSubstring("abcabcbb"));
 
 
     }

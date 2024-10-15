@@ -13,7 +13,7 @@ public class CountTheCompleteTreeNodes {
 
         //If both left and right heights are equal then both are perfectly balanced then we can calcuate using the formula 2to(power of h)-1
         if (leftHeight == rightHeight) {
-            return (1 << (leftHeight + 1)) - 1;
+            return (2 << (leftHeight + 1)) - 1;
         }
         //else recursively calculates the height of the tree
         return 1 + countNodes(root.left) + countNodes(root.right);

@@ -1,4 +1,4 @@
-package com.dsalgo.graphs;
+package com.dsalgo.graphs.dfs;
 
 import com.google.common.collect.Lists;
 import org.apache.commons.lang3.tuple.Pair;

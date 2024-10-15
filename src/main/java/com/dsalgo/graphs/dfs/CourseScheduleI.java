@@ -1,9 +1,24 @@
-package com.dsalgo.graphs;
+package com.dsalgo.graphs.dfs;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+
+/**
+ * Approach 1: Topological Sorting (Kahn’s Algorithm)
+ *
+ * Algorithm:
+ *
+ * 	1.	Create an adjacency list to represent the graph.
+ * 	2.	Create an array inDegree[] to store the number of prerequisites for each course.
+ * 	3.	Initialize a queue with all courses that have zero prerequisites.
+ * 	4.	Perform BFS:
+ * 	•	Pop a course from the queue, process it (add it to the result), and decrease the in-degree of its neighbors.
+ * 	•	If any neighbor’s in-degree becomes zero, add it to the queue.
+ * 	5.	If all courses are processed, return true (no cycle). If any course is left unprocessed, return false (cycle detected).
+ */
+
 
 public class CourseScheduleI {
 

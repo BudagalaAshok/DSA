@@ -1,4 +1,4 @@
-package com.dsalgo.arrays;
+package com.dsalgo.intervals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,7 +36,7 @@ public class InsertInterval {
     }
 
     public static void main(String[] args) {
-        List<int[]> ints = insertInterval(new int[][]{{1, 3}, {6, 9}}, new int[]{4, 5});
+        List<int[]> ints = insertInterval(new int[][]{{1, 3}, {6, 9}}, new int[]{2, 5});
         ints.forEach(ints1 -> {
             System.out.println(Arrays.toString(ints1));
         });

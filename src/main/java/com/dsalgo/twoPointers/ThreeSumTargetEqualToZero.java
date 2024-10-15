@@ -70,7 +70,8 @@ public class ThreeSumTargetEqualToZero {
                    //Now move to the next position of i and j because we need to take unique elements
                     j++;
                     k--;
-                    //now j and k also should be unique, we need to consider unique element so that we need to move this j and k to the next unique element position
+                    //now j and k also should be unique, we need to consider unique element so that we need to move this j
+                    // and k to the next unique element position
                     //Move j until if arr[j]!arr[j-1]
                     while(j<k && arr[j]==arr[j-1]){
                         j++;

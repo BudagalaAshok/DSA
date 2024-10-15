@@ -55,9 +55,6 @@ public class SubstringWithConcatenationOfAllStrings {
             }
 
         }
-        int[][] board=new int[3][3];
-        for(int[] eachArray:board){
-        }
         return true;
     }
 

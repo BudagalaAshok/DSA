@@ -1,4 +1,4 @@
-package com.dsalgo.graphs;
+package com.dsalgo.graphs.bfs;
 
 import java.util.*;
 

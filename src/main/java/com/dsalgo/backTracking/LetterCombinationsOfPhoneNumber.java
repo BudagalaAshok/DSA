@@ -3,6 +3,13 @@ package com.dsalgo.backTracking;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 	•	Each digit in the input corresponds to 3 or 4 possible letters (e.g., 2 maps to “abc”, 7 maps to “pqrs”).
+ * 	•	In the worst case, each digit maps to 4 letters.
+ * 	•	For n digits, the total number of combinations is approximately 4^n.
+ *
+ * Thus, the time complexity is O(4^n) because we are generating and potentially storing all combinations of letters.
+ */
 public class LetterCombinationsOfPhoneNumber {
 
     private List<String> result=new ArrayList<>();

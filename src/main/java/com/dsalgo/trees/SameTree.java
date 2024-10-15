@@ -3,6 +3,9 @@ package com.dsalgo.trees;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Same Tree: Focuses on identity (exact match between two trees).
+ */
 public class SameTree {
 
     public boolean isSameTree(TreeNode p, TreeNode q) {

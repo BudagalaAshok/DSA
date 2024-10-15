@@ -27,6 +27,30 @@ public class JumpGameII {
         return totalJumps;
     }
 
+    public int minJumpsAnotherApproach(int[] jumps){
+        int jumpsCount=0;
+        int farthestReachable=0;
+        int currentJumpEnd=0;
+        for (int i = 0; i < jumps.length; i++) {
+
+            //Calculating how much far we can go from current position
+            farthestReachable=Math.max(farthestReachable,i+jumps[i]);
+
+            if(i==currentJumpEnd){
+                jumpsCount++;
+                currentJumpEnd=farthestReachable; //setting the new range
+            }
+
+            // If the currentEnd is at or beyond the last index, we are done
+            if(farthestReachable>=jumps.length-1){
+                break;
+            }
+
+        }
+        return jumpsCount;
+
+    }
+
     public static void main(String[] args) {
         JumpGameII jumpGameII = new JumpGameII();
         System.out.println(jumpGameII.minJumps(new int[]{2, 3, 1, 1, 4}));

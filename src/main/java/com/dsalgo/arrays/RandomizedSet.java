@@ -19,7 +19,7 @@ public class RandomizedSet {
         if (map.containsKey(val)) {
             return false;
         }
-        map.put(val, list.size());
+        map.put(val, list.size()-1);
         list.add(val);
         return true;
     }

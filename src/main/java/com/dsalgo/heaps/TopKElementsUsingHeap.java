@@ -2,6 +2,7 @@ package com.dsalgo.heaps;
 
 import com.google.common.collect.Maps;
 
+import java.util.Comparator;
 import java.util.Map;
 import java.util.PriorityQueue;
 
@@ -23,7 +24,7 @@ public class TopKElementsUsingHeap {
         }
 
         //Now Define a Priority Queue with MinHeap of Lowest frequent elements as top
-        PriorityQueue<Map.Entry<Integer,Integer>> priorityQueue=new PriorityQueue<>((o1, o2) -> o1.getValue()-o2.getValue());
+        PriorityQueue<Map.Entry<Integer,Integer>> priorityQueue=new PriorityQueue<>(Comparator.comparingInt(Map.Entry::getValue));
 
         //Now insert element into heap based on their frequency
         for (Map.Entry<Integer,Integer> entry:integerMap.entrySet()){

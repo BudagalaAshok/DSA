@@ -1,6 +1,6 @@
 package com.dsalgo.trees;
 
-public class CalculateSum {
+public class HasPathSum {
 
     /**
      * Checking whether we have targetSum from root node to leaf node either from left or right

@@ -158,7 +158,7 @@ public class MinimumWindowSubString {
 
         }
 
-        return minLeft == Integer.MAX_VALUE ? "" : s.substring(minLeft, minLeft + minLength);
+        return minLength == Integer.MAX_VALUE ? "" : s.substring(minLeft, minLeft + minLength);
 
 
     }
