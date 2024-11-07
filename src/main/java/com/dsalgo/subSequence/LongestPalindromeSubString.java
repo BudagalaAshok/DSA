@@ -79,8 +79,8 @@ public class LongestPalindromeSubString {
     public static void main(String[] args) {
         //printSubstrings("abcd");
         //0(n to power of 2) and brute force is 0(n to power of 3)
-       printSubstrings("babad");
-        System.out.println("Longest Palindromic String: "+longestPalindromicSubstring("babad"));
+        printSubstrings("babad");
+        System.out.println("Longest Palindromic String: " + longestPalindromicSubstring("cbbd"));
 
     }
 

@@ -132,7 +132,7 @@ public class SetZeroMatrix {
     /**
      * First step is to find any zero found in first row or first col if it is found set the respective flags
      * Now iterate from first row and first column if any one of the cell contains zero store the respective information in first row and first column
-     * Now iterate again from first and first col using the stored information from first row and first column mark them as zer
+     * Now iterate again from first and first col using the stored information from first row and first column mark them as zero
      * At last based on the flags we set in first step now set first row or first columns as zero
      * @param matrix
      */

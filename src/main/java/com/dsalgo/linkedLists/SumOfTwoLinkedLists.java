@@ -37,7 +37,7 @@ public class SumOfTwoLinkedLists {
     private void printList(ListNode head) {
         ListNode current = head;
         while (current != null) {
-            System.out.print(current.next + " ");
+            System.out.print(current.val + " ");
             current = current.next;
         }
         System.out.println();
@@ -45,13 +45,18 @@ public class SumOfTwoLinkedLists {
 
     public static void main(String[] args) {
         // Example usage
-        ListNode l1 = new ListNode(2);
-        l1.next = new ListNode(4);
-        l1.next.next = new ListNode(3);
+        ListNode l1 = new ListNode(9);
+        l1.next = new ListNode(9);
+        l1.next.next = new ListNode(9);
+        l1.next.next.next = new ListNode(9);
+        l1.next.next.next.next = new ListNode(9);
+        l1.next.next.next.next.next = new ListNode(9);
 
-        ListNode l2 = new ListNode(5);
-        l2.next = new ListNode(6);
-        l2.next.next = new ListNode(4);
+        ListNode l2 = new ListNode(9);
+        l2.next = new ListNode(9);
+        l2.next.next = new ListNode(9);
+        l2.next.next.next = new ListNode(9);
+
 
         SumOfTwoLinkedLists solution = new SumOfTwoLinkedLists();
         System.out.println("List 1:");

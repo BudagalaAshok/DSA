@@ -1,4 +1,4 @@
-package com.dsalgo.arrays;
+package com.dsalgo.stacks;
 
 import java.util.Arrays;
 import java.util.Stack;

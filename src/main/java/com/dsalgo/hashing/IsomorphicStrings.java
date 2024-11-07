@@ -6,7 +6,6 @@ import java.util.Map;
 public class IsomorphicStrings {
 
     //Optimal solution with out using extra space by checking character positions
-
     public boolean isIsomorphic(String s, String t) {
         int[] sMap = new int[256];
         int[] tMap = new int[256];

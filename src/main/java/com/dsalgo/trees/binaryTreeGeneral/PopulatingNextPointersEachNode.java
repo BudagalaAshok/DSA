@@ -1,4 +1,6 @@
-package com.dsalgo.trees;
+package com.dsalgo.trees.binaryTreeGeneral;
+
+import com.dsalgo.trees.Node;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -84,7 +86,7 @@ public class PopulatingNextPointersEachNode {
 
     //Another solution to achieve the same using BFS
 
-    /**
+    /** TC: O(n) and space C: O(h) ,worst case : O(n)
      * Iterate through each level of the tree. The outer loop continues until no more levels are below (mostleft.left is NULL).
      * Inside the outer loop, there is an inner loop that traverses each node on the current level. It starts with the current variable initialized as the leftmost node of the current level.
      * Within the inner loop, the algorithm establishes the connections between nodes.

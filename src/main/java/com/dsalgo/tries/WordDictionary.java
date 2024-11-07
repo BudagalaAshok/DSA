@@ -43,7 +43,7 @@ class WordDictionary {
         //If the current character is . then recursively check for all the children
         if (word.charAt(index) == '.') {
             for (TrieNode child : node.children) {
-                if (node != null && searchInNode(word, index + 1, child)) {
+                if (child != null && searchInNode(word, index + 1, child)) {
                     return true;
                 }
             }

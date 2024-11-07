@@ -7,7 +7,7 @@ public class LengthOfLastWord {
     public int lengthOfLastWordInAnSentence(String sentence) {
         //first trim the sentence
         sentence = sentence.trim();
-        System.out.println(sentence);
+        System.out.print(sentence);
         boolean isWord = false;
         int length = sentence.length() - 1;
         while (!Character.isLetter(sentence.charAt(length))) {
@@ -30,7 +30,7 @@ public class LengthOfLastWord {
 
     public static void main(String[] args) {
         LengthOfLastWord lengthOfLastWord = new LengthOfLastWord();
-        System.out.println("Length was :" + lengthOfLastWord.lengthOfLastWordInAnSentence(" Hello   This is  a  world "));
+        System.out.println("Length was :" + lengthOfLastWord.lengthOfLastWordInAnSentence(" Hello   This is  a  world   "));
     }
 
 }

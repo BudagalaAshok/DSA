@@ -6,9 +6,6 @@ public class SearchInRotatedSortedArray {
     //Let say array got rotated at index 4 then the array becames {4,5,6,7,0,1,2}
     //Now let's find the rotated index
 
-
-
-
     public static int findRotatedIndexInSortedArray(int[] arr,int target){
 
        //Find low and high values

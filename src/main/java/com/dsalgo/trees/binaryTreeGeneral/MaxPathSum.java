@@ -1,4 +1,6 @@
-package com.dsalgo.trees;
+package com.dsalgo.trees.binaryTreeGeneral;
+
+import com.dsalgo.trees.TreeNode;
 
 public class MaxPathSum {
 
@@ -16,6 +18,16 @@ public class MaxPathSum {
         return maxSum;
     }
 
+    /**
+     * 1.	The node itself.
+     * 2.	The node plus its left child’s path.
+     * 3.	The node plus its right child’s path.
+     * 4.	The node plus both left and right children’s paths (creating a “V” shape).
+     *
+     * @param root
+     * @return
+     */
+
     private int findMaxSum(TreeNode root) {
 
         if (root == null) {
@@ -23,12 +35,18 @@ public class MaxPathSum {
         }
 
         //First find the leftSum from root node to left path
-        int leftSum = Math.max(0, findMaxSum(root.left));
+        int leftSum = findMaxSum(root.left);
         //First find the rightSum from root node to right path
-        int rightSum = Math.max(0, findMaxSum(root.right));
+        int rightSum = findMaxSum(root.right);
+
+        //Nodes contains negative values as well so don't include negative values so one we got the left and right values
+        leftSum = Math.max(0, leftSum);
+        rightSum = Math.max(0, rightSum);
+
         // Update the overall maximum
         // path sum including the current node
         int currentSum = root.val + leftSum + rightSum;
+        //Update the global sum
         maxSum = Math.max(maxSum, currentSum);
 
         // Return the maximum sum considering

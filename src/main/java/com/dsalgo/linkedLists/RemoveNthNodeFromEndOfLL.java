@@ -1,5 +1,14 @@
 package com.dsalgo.linkedLists;
 
+
+/**
+ * 	1.	Create a Gap of n Nodes: Move the fast pointer n nodes ahead. This gap will ensure that when the fast pointer reaches the end of the list,
+ * 	the slow pointer will be exactly at the node just before the nth node from the end.
+ * 	2.	Move Both Pointers Until Fast Reaches the End: By moving both pointers one node at a time until the fast pointer hits the end (fast != null),
+ * 	the slow pointer ends up right before the nth node from the end.
+ * 	3.	Remove the nth Node: Now that the slow pointer is right before the target node, we can skip it by adjusting the pointer connection,
+ * 	effectively removing it from the list.
+ */
 public class RemoveNthNodeFromEndOfLL {
 
 

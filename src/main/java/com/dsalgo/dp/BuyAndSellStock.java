@@ -168,6 +168,7 @@ public class BuyAndSellStock {
         for (int[] eachArray : dp) {
             Arrays.fill(eachArray, -1);
         }
+        //Here operation '1' means buy and '0' means sell
         buyAndSellStock.buyAndSellStocksUsingMemoization(arr, 0, 1, n, dp);
 
     }

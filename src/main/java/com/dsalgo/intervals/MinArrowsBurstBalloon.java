@@ -1,6 +1,7 @@
 package com.dsalgo.intervals;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * The Minimum Arrows to Burst Balloons problem is a classic greedy problem where you need to figure out the minimum number of arrows required to burst all balloons.
@@ -24,7 +25,7 @@ public class MinArrowsBurstBalloon {
         }
 
         //Now sort the array with end positions
-        Arrays.sort(points,(a,b) -> Integer.compare(a[1],b[1]));
+        Arrays.sort(points, Comparator.comparingInt(a -> a[1]));
 
         int arrows=1; // Shoot the array last position
         int lastPosition=points[0][1];

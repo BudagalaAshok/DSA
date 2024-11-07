@@ -8,6 +8,8 @@ public class LinkedListCycle {
             return false;
         }
 
+        //If slow and fast meets any points then we can tell there is a cycle exists,
+        //If we don't have cycle then slow and fast pointers never meet
         Node slow=head;
         Node fast=head;
         while(fast!=null && fast.next!=null){

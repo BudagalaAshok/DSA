@@ -80,28 +80,28 @@ public class RainWaterTrappingProblem {
     //Here we can solve using two pointer technique as well here with out space and time complexity is O(n)
     public static int calculateTrappedWaterWithTwoPointer(int[] heights){
 
-        int lhb=heights[0];
-        int rhb=heights[heights.length-1];
-        int l=0;
-        int r=heights.length-1;
+        int leftMax=heights[0];
+        int rightMax=heights[heights.length-1];
+        int left=0;
+        int right=heights.length-1;
         int res=0;
-        while(l<=r){
+        while(left<=right){
 
-            if(lhb<=rhb){
+            if(leftMax<=rightMax){
 
-                if(heights[l]>=lhb){
-                    lhb=heights[l];
+                if(heights[left]>=leftMax){
+                    leftMax=heights[left];
                 }else{
-                 res+=lhb-heights[l];
+                 res+=leftMax-heights[left];
                 }
-               l++;
+               left++;
             }else{
-                 if(heights[r]>=rhb){
-                     rhb=heights[r];
+                 if(heights[right]>=rightMax){
+                     rightMax=heights[right];
                  }else{
-                     res+=rhb-heights[r];
+                     res+=rightMax-heights[right];
                  }
-                r--;
+                right--;
             }
 
         }

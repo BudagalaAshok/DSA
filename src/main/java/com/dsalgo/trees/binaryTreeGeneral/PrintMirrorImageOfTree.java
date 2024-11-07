@@ -1,10 +1,24 @@
-package com.dsalgo.trees;
+package com.dsalgo.trees.binaryTreeGeneral;
+
+import com.dsalgo.trees.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class PrintMirrorImageOfTree {
 
+    /**
+     Time Complexity
+
+     •	 O(n) : We need to visit each node once to invert its left and right children. If  n  is the total number of nodes in the tree, the time complexity is linear,  O(n) .
+
+     Space Complexity
+
+     •	 O(h) : This represents the space required for the recursion stack if we use a recursive approach, where  h  is the height of the tree.
+     •	In the worst case (for a completely unbalanced tree),  h  could be  n , making the space complexity  O(n) .
+     •	In the best case (for a balanced tree),  h  is  \log(n) , making the space complexity  O(\log(n)) .
+
+     */
     public void printMirrorOfTree(TreeNode node) {
 
         //Base case

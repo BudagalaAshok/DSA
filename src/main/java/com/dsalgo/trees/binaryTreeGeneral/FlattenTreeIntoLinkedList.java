@@ -1,4 +1,6 @@
-package com.dsalgo.trees;
+package com.dsalgo.trees.binaryTreeGeneral;
+
+import com.dsalgo.trees.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,6 +74,7 @@ public class FlattenTreeIntoLinkedList {
     //Optimal approach using level order traversal
     //iterate left side of the tree until reach the right most node and then connect this right to root node right
     //and then continue
+    //TC: O(n) and SC: O(h)--> Here h is the logn in balanced tree and h is the n in worst case incase of skewed tree
     public void flattenTreeLL(TreeNode node) {
         // Initialize a pointer
         // 'curr' to the root of the tree

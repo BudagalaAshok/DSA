@@ -5,7 +5,7 @@ import com.dsalgo.trees.Node;
 import com.dsalgo.trees.TreeNode;
 
 /**
- * Main idea behind to solve this problem was to apply the merge sort and sort left and right part of the linked list to od that
+ * Main idea behind to solve this problem was to apply the merge sort and sort left and right part of the linked list to do that
  * First we need to find the middle element by using slow and fast pointer technique
  * After that disconnect the link of the middle element and sort the left and right part of the linked list
  * Once both are sorted we can merge the linked list

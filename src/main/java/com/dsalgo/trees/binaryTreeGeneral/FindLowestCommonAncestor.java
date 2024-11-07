@@ -1,4 +1,7 @@
-package com.dsalgo.trees;
+package com.dsalgo.trees.binaryTreeGeneral;
+
+import com.dsalgo.trees.FindPathUsingDFS;
+import com.dsalgo.trees.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +45,7 @@ public class FindLowestCommonAncestor {
     //here we are not using any extra space and we traverse the tree only once
     //we traverse the entire tree using dfs and from root node we go to the left and if it has left and then again left.if left is not there
     //then we need to move to right
+    //TC: 0(n) and SC:O(h), worst complexity in-case of skewed tree O(h)
     public TreeNode findLCA(TreeNode root, TreeNode p, TreeNode q) {
 
         //If the given node is p or q then return that node

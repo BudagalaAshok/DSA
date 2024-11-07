@@ -1,4 +1,6 @@
-package com.dsalgo.trees;
+package com.dsalgo.trees.binaryTreeGeneral;
+
+import com.dsalgo.trees.TreeNode;
 
 public class HasPathSum {
 
@@ -7,6 +9,7 @@ public class HasPathSum {
      * @param root
      * @param targetSum
      * @return
+     * TC:O(n), SC: O(h)
      */
     public boolean hasPathSum(TreeNode root, int targetSum) {
 
@@ -22,7 +25,7 @@ public class HasPathSum {
         }
 
         int remainingSum=targetSum-root.val;
-        //Checking either left or right
+        //Checking either left or right contains the required sum in our tree
         return hasPathSum(root.left,remainingSum) || hasPathSum(root.right,remainingSum);
     }
 }

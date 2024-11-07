@@ -1,4 +1,6 @@
-package com.dsalgo.trees;
+package com.dsalgo.trees.binaryTreeBFS;
+
+import com.dsalgo.trees.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

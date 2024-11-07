@@ -3,6 +3,14 @@ package com.dsalgo.graphs.bfs;
 import java.util.*;
 
 //BFS Problem
+
+/**
+ * First check the endword is part of the wordList if not found directly return -1
+ * Next define visited data-structure to keep track of already visited words to avoid revisiting now push the start word to the queue and start BFS
+ * Now convert that String in to char array and iterate up to each character and try with all 26 letters for that position and keep on checking formed string is equal to end of word
+ * If not then check that word is part of wordlist then added to visited ds and to queue once done remove the character set from the original string
+ * If not found -1;
+ */
 public class WordLadder {
 
 
@@ -47,7 +55,7 @@ public class WordLadder {
 
 
                     }
-
+                    //Once all combinations are done just put the original character as it-is in the original string
                     currentCharArray[j] = originalChar;
 
                 }

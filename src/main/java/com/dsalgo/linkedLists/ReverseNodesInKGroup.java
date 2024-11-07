@@ -1,5 +1,14 @@
 package com.dsalgo.linkedLists;
 
+
+//TC: O(N) (Dividing groups and reversing) + O(N) (Finding the kth-node)
+//SC: O(1)
+
+/**
+ * Step1 : First Find the Kth-node and then store the next node of kth node and disconnect the link between kthnode and next node
+ * Step2 : now reverse the entire group and put the head in proper place and then link to the next proper node
+ * Step3: Check if kth node is null and then link the prevNode to the next node by checking prevNode!=null
+ */
 public class ReverseNodesInKGroup {
 
     public ListNode reverseNodesInKGroup(ListNode head,int k){
@@ -20,6 +29,7 @@ public class ReverseNodesInKGroup {
             kthNode.next=null;
             //Now call the reverse method 
             reverseLL(temp);
+            //this is the first group whenever temp==head
             if(temp==head){
                 head=kthNode;
             }else{

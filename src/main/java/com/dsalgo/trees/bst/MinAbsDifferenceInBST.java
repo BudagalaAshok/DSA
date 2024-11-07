@@ -1,5 +1,7 @@
-package com.dsalgo.trees;
+package com.dsalgo.trees.bst;
 
+
+import com.dsalgo.trees.TreeNode;
 
 /**
  * Find the minimum absolute difference between two nodes of a given tree from root

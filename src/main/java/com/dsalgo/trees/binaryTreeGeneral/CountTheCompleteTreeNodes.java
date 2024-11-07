@@ -1,4 +1,6 @@
-package com.dsalgo.trees;
+package com.dsalgo.trees.binaryTreeGeneral;
+
+import com.dsalgo.trees.TreeNode;
 
 public class CountTheCompleteTreeNodes {
 
@@ -8,8 +10,8 @@ public class CountTheCompleteTreeNodes {
             return 0;
         }
 
-        int leftHeight = getHeight(root.left);
-        int rightHeight = getHeight(root.right);
+        int leftHeight = getLeftHeight(root.left);
+        int rightHeight = getRightHeight(root.right);
 
         //If both left and right heights are equal then both are perfectly balanced then we can calcuate using the formula 2to(power of h)-1
         if (leftHeight == rightHeight) {
@@ -21,11 +23,21 @@ public class CountTheCompleteTreeNodes {
     }
 
     //Calculate the height of the tree by going the node one by one
-    public int getHeight(TreeNode node) {
-        int height = 0;
-        while (node != null) {
+    //Calculate the height of the tree by going the node one by one
+    public int getLeftHeight(TreeNode node){
+        int height=0;
+        while(node!=null){
             height++;
-            node = node.left;
+            node=node.left;
+        }
+        return height;
+    }
+
+    public int getRightHeight(TreeNode node){
+        int height=0;
+        while(node!=null){
+            height++;
+            node=node.right;
         }
         return height;
     }

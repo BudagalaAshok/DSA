@@ -39,8 +39,8 @@ public class MergeKSortedLists {
     }
 
     /**
-     * Second solution is inplace merge of two sorted linked list and then find the head and then move to the next head of the given
-     * list and then apply the same inplace merge and then so on and then finally return head
+     * Second solution is in-place merge of two sorted linked list and then find the head and then move to the next head of the given
+     * list and then apply the same in-place merge and then so on and then finally return head
      **/
 
     public Node mergeKSortedListUsingBetterApproach(Node[] lists) {

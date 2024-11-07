@@ -24,7 +24,7 @@ public class CloneGraph {
 
         //Checking the node already exists in the map if it exists then return directly and add to the neighbor list
         if (nodeHashMap.containsKey(node)) {
-            nodeHashMap.get(node);
+            return nodeHashMap.get(node);
         }
 
 

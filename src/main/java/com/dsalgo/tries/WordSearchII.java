@@ -15,6 +15,7 @@ public class WordSearchII {
     }
 
     private int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}; // Up, Down, Left, Right
+
     public List<String> findWords(char[][] board, String[] words) {
 
         List<String> result = new ArrayList<>();
@@ -44,6 +45,11 @@ public class WordSearchII {
         //Check for the base condition
         char ch = board[i][j];
         root = root.children[ch - 'a'];
+        //Is this really needed ?
+        if (root == null) {
+            return;
+        }
+
         if (root.isEndOfWord) {
             result.add(root.word);
             //To avoid duplicate words
@@ -68,10 +74,11 @@ public class WordSearchII {
         for (String eachWord : words) {
 
             for (char eachChar : eachWord.toCharArray()) {
-                if (current.children[eachChar - 'a'] == null) {
+                int index = eachChar = 'a';
+                if (current.children[index] == null) {
                     current.children[eachChar] = new TrieNode();
                 }
-                current = current.children[eachChar - 'a'];
+                current = current.children[index];
             }
             current.isEndOfWord = true;
             current.word = eachWord;
@@ -80,7 +87,6 @@ public class WordSearchII {
 
         return root;
     }
-
 
 
     //Using only DFS to search
@@ -108,7 +114,7 @@ public class WordSearchII {
     private boolean dfs(char[][] board, int i, int j, String word, int index) {
         // Base cases
         if (index == word.length()) return true; // Word is found
-        if (i < 0 || i >= board.length || j < 0 || j >= board[0].length || board[i][j]=='#' || board[i][j] != word.charAt(index)) {
+        if (i < 0 || i >= board.length || j < 0 || j >= board[0].length || board[i][j] == '#' || board[i][j] != word.charAt(index)) {
             return false; // Out of bounds or character mismatch
         }
 

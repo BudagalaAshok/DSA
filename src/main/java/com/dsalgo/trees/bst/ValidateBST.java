@@ -1,4 +1,6 @@
-package com.dsalgo.trees;
+package com.dsalgo.trees.bst;
+
+import com.dsalgo.trees.TreeNode;
 
 public class ValidateBST {
 

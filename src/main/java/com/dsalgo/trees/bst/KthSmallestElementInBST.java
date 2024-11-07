@@ -1,4 +1,6 @@
-package com.dsalgo.trees;
+package com.dsalgo.trees.bst;
+
+import com.dsalgo.trees.TreeNode;
 
 /*
  * It is 1 based indexing, Here also we need to traverse the tree with inorder traversal
@@ -22,6 +24,7 @@ public class KthSmallestElementInBST {
         counter++;
         if (counter == k) {
             result = treeNode.val;
+            return;
         }
         getSmallestElement(treeNode.right, k);
     }

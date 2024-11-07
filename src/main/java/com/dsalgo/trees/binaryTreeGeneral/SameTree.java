@@ -1,4 +1,6 @@
-package com.dsalgo.trees;
+package com.dsalgo.trees.binaryTreeGeneral;
+
+import com.dsalgo.trees.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -8,6 +10,17 @@ import java.util.Queue;
  */
 public class SameTree {
 
+    /**
+     * Time Complexity
+     *
+     * 	•	 O(n) : We must visit each node in the tree once to compute its depth. Since we traverse all nodes, where  n  is the number of nodes in the tree, the time complexity is linear.
+     *
+     * Space Complexity
+     *
+     * 	•	 O(h) : This represents the space required for the recursive call stack, where  h  is the height of the tree.
+     * 	•	In the worst case (for a skewed tree),  h  can be  n , making the space complexity  O(n) .
+     * 	•	In the best case (for a balanced tree),  h  is  \log(n) , so the space complexity is  O(\log(n)) .
+     */
     public boolean isSameTree(TreeNode p, TreeNode q) {
 
         //If both nodes are null

@@ -28,7 +28,7 @@ public class FindIndexOfFirstOccurrenceOfString {
     public static void main(String[] args) {
 
         FindIndexOfFirstOccurrenceOfString findIndexOfFirstOccurrenceOfString = new FindIndexOfFirstOccurrenceOfString();
-        //System.out.println(findIndexOfFirstOccurrenceOfString.findIndexOfFirstOccurrence("leeto", "leetcode"));
+         findIndexOfFirstOccurrenceOfString.findIndexOfFirstOccurrence("leeto", "leetcode");
         findIndexOfFirstOccurrenceOfString.findIndexOfFirstOccurrence("sad", "sadbutsad");
 
     }

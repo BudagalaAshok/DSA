@@ -2,6 +2,18 @@ package com.dsalgo.dp;
 
 import java.util.Arrays;
 
+/**
+ * Given an integer array nums, return the length of the longest strictly increasing
+ * subsequence
+ * Example 1:
+ * Input: nums = [10,9,2,5,3,7,101,18]
+ * Output: 4
+ * Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4.
+ * Example 2:
+ * Input: nums = [0,1,0,3,2,3]
+ * Output: 4
+ */
+
 public class LongestIncreasingSequence {
 
     //Find the length of longest increasing sequence
@@ -88,7 +100,7 @@ public class LongestIncreasingSequence {
     private int findLISUsingTabulation(int[] nums, int n) {
         int maxLength = 1;
         int[] dp = new int[n];
-        //Because by default all the numbers at index i forms 1 sequence length
+        //Because by default all the numbers at index i forms 1 sequence length, each number is of unique length 1
         Arrays.fill(dp, 1);
 
         for (int i = 1; i < n; i++) {

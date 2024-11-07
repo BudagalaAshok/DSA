@@ -2,6 +2,12 @@ package com.dsalgo.heaps;
 
 import java.util.*;
 
+/**
+ You are given two integer arrays nums1 and nums2 sorted in non-decreasing order and an integer k.
+ Define a pair (u, v) which consists of one element from the first array and one element from the second array.
+ Return the k pairs (u1, v1), (u2, v2), ..., (uk, vk) with the smallest sums.
+ **/
+
 public class FindKPairsWithSmallestSum {
 
 
@@ -87,7 +93,7 @@ public class FindKPairsWithSmallestSum {
     public static void main(String[] args) {
         FindKPairsWithSmallestSum findKPairsWithSmallestSum = new FindKPairsWithSmallestSum();
         //findKPairsWithSmallestSum.kSmallestPairs(new int[]{1, 2, 3}, new int[]{3, 4, 5}, 2);
-        List<List<Integer>> pairs = findKPairsWithSmallestSum.kSmallestPairsUsingHeaps(new int[]{1, 1, 2}, new int[]{1,2,3}, 2);
+        List<List<Integer>> pairs = findKPairsWithSmallestSum.kSmallestPairsUsingHeaps(new int[]{1, 1, 2}, new int[]{1,2,3}, 3);
         pairs.forEach(System.out::println);
     }
 

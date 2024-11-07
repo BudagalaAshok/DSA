@@ -15,7 +15,7 @@ public class  LongestCommonSubSequence {
 
         //If both characters are equal at the index we specified
         if (s1.charAt(index1) == s2.charAt(index2)) {
-            return 1 + findLCSUsingRecursion(s1, s2, index1 - 1, index2 - 1);
+            return 1 +  findLCSUsingRecursion(s1, s2, index1 - 1, index2 - 1);
         }
 
         //if those are not equal then check with one before and one at current position on two strings
